@@ -1,0 +1,56 @@
+﻿<Window x:Class="Facebook_Bot_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Facebook_Bot_"
+        mc:Ignorable="d"
+        Background="#d5ecf7"
+        Icon="image/icon.png"
+        Title="Fb_bot" Height="450" Width="800">
+    <Grid Margin="20,20,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Foreground="Tomato" FontSize="15">Facebook bot: 1. Enter login and password; 2. Select one folder; 3. Enter text (optional); 4. Press run to start </Label>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+            <Label Height="30" FontSize="15">Facebook login</Label>
+            <TextBox Width="200" Height="25" FontSize="15" Name="loginBox"></TextBox>
+            <Label Height="30" FontSize="15">Facebook password</Label>
+            <TextBox Width="200" Height="25" FontSize="15" Name="passBox"></TextBox>
+        </StackPanel>
+
+        <StackPanel  HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+            <Button  Foreground="Wheat" Background="#867a91" Height="30" FontSize="15" Margin="10,0,0,0" Width="120" Name="openBtn" Click="openBtn_Click">All posts</Button>
+            <Button Foreground="Wheat" Background="#867a91" Height="30" FontSize="15" Margin="10,0,0,0" Width="120" Name="randomBtn" Click="randomBtn_Click">Random posts</Button>
+            <TextBox Background="#d5ecf7" Height="30" Name="path" BorderThickness="0" FontSize="15"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Label Height="30" FontSize="15">Message text:</Label>
+            <TextBox Height="60" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="600" FontSize="15" Name="messageBox" TextWrapping="Wrap" MaxLength="1000"></TextBox>
+        </StackPanel>
+
+        <StackPanel Visibility="Collapsed" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="4">
+            <Label Height="30" FontSize="15">Timer:</Label>
+            <ComboBox Height="30" Width="80" FontSize="15" Name="timerBox">
+                <ComboBoxItem>Once</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="6">
+            <Button Foreground="Wheat" Background="#867a91" Height="30" FontSize="15" Width="100" Name="runBtn" Click="runBtn_Click">Run</Button>
+            <Button Foreground="Wheat" Background="#867a91" Height="30" FontSize="15" Width="100" Name="stopBtn" Click="stopBtn_Click" Margin="5,0,0,0">Stop</Button>
+        </StackPanel>
+    </Grid>
+</Window>
